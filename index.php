@@ -18,7 +18,7 @@
         Genera una password sicura
     </h2>
     <?php
-    if (isset($_GET['password_length'])) {
+    if (isset($_GET['password_length']) && $_GET['password_length'] != '') {
         $password_length = $_GET['password_length'];
         // Esegui le operazioni desiderate con la lunghezza della password
         echo generateRandomString($password_length);
@@ -40,7 +40,7 @@
     ?>
     <form class="text-center mt-4" action="" method="GET">
         <label for="password_length">Lunghezza password:</label>
-        <input type="number" name="password_length" id="password_length" min="1" required>
+        <input type="number" name="password_length" id="password_length">
         <input type="submit" value="Invia">
         <input type="reset" value="Reset">
 
